@@ -24,7 +24,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     }
 
     const buffer = await getFileBuffer(doc.fileUrl);
-    return new NextResponse(buffer, {
+    return new NextResponse(new Uint8Array(buffer), {
       headers: {
         "Content-Type": doc.fileType ?? "application/octet-stream",
         "Content-Disposition": `attachment; filename="${encodeURIComponent(doc.fileName)}"`,
