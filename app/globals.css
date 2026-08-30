@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  background-color: var(--surface-page);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-300);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-neutral-400); }
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[data-focus-border]:focus-visible,
+[data-focus-border]:focus-within {
+  outline: none;
+  outline-offset: 0;
+}
+
+::selection {
+  background: var(--color-primary-100);
+  color: var(--color-primary-900);
+}
+
+/* Hide native number spinner arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Date / datetime-local inputs — theme-aware color-scheme so the browser
+   picker renders in light or dark mode matching our token toggle.
+   The default picker indicator is hidden; DateInput overlays our own icon. */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+  color-scheme: light;
+}
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="datetime-local"],
+[data-theme="dark"] input[type="time"] {
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 28px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+/* Theme-dependent brand logos */
+.theme-logo-light {
+  display: block;
+}
+.theme-logo-dark {
+  display: none;
+}
+[data-theme="dark"] .theme-logo-light {
+  display: none !important;
+}
+[data-theme="dark"] .theme-logo-dark {
+  display: block !important;
+}
+

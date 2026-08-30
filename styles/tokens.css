@@ -1,0 +1,347 @@
+/* ============================================================
+   Amzetix -OS — Design Tokens
+   SINGLE SOURCE OF TRUTH. No hex/spacing values in components.
+
+   Light theme : titanium / silver / white / black (monochrome).
+   Dark  theme : near-black + silver, white-alpha surfaces.
+   Chromatic exceptions (functional only):
+     --color-danger-*    destructive actions + validation errors
+     --color-success-*   completed states, paid, on-time
+     --color-warning-*   draft, pending, at-risk
+     --color-info-*      informational, new lead
+   ============================================================ */
+
+:root {
+  /* ── Neutral ramp — titanium / silver / white / black ── */
+  --color-neutral-0:   #ffffff;
+  --color-neutral-50:  #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-black:       #0a0a0a;
+  --color-white:       #ffffff;
+
+  /* ── Brand / primary — monochrome (maps onto the neutral ramp) ── */
+  --color-primary-50:  #fafafa;
+  --color-primary-100: #f4f4f5;
+  --color-primary-200: #e4e4e7;
+  --color-primary-300: #d4d4d8;
+  --color-primary-400: #71717a;
+  --color-primary-500: #27272a;
+  --color-primary-600: #18181b;
+  --color-primary-700: #0a0a0a;
+  --color-primary-800: #0a0a0a;
+  --color-primary-900: #000000;
+
+  /* ── Danger ── */
+  --color-danger-50:  #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-500: #dc2626;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+
+  /* ── Success / Warning / Info — functional accents ── */
+  --color-success-50:  #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-warning-50:  #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-info-50:     #eff6ff;
+  --color-info-100:    #dbeafe;
+  --color-info-500:    #3b82f6;
+  --color-info-600:    #2563eb;
+  --color-info-700:    #1d4ed8;
+
+  /* ── Entity lifecycle status tokens — single source ──
+     Use these in Badge, Dot, StatusPill — never hardcode. */
+  --status-active-bg:   var(--color-success-50);
+  --status-active-fg:   var(--color-success-700);
+  --status-active-dot:  var(--color-success-500);
+
+  --status-draft-bg:    var(--color-warning-50);
+  --status-draft-fg:    var(--color-warning-700);
+  --status-draft-dot:   var(--color-warning-500);
+
+  --status-pending-bg:  var(--color-warning-50);
+  --status-pending-fg:  var(--color-warning-700);
+  --status-pending-dot: var(--color-warning-500);
+
+  --status-sent-bg:     var(--color-info-50);
+  --status-sent-fg:     var(--color-info-700);
+  --status-sent-dot:    var(--color-info-500);
+
+  --status-paid-bg:     var(--color-success-50);
+  --status-paid-fg:     var(--color-success-700);
+  --status-paid-dot:    var(--color-success-500);
+
+  --status-overdue-bg:  var(--color-danger-50);
+  --status-overdue-fg:  var(--color-danger-700);
+  --status-overdue-dot: var(--color-danger-500);
+
+  --status-won-bg:      var(--color-success-50);
+  --status-won-fg:      var(--color-success-700);
+  --status-won-dot:     var(--color-success-500);
+
+  --status-lost-bg:     var(--color-danger-50);
+  --status-lost-fg:     var(--color-danger-600);
+  --status-lost-dot:    var(--color-danger-500);
+
+  --status-cancelled-bg:  var(--color-neutral-100);
+  --status-cancelled-fg:  var(--color-neutral-600);
+  --status-cancelled-dot: var(--color-neutral-400);
+
+  --status-archived-bg:  var(--color-neutral-100);
+  --status-archived-fg:  var(--color-neutral-600);
+  --status-archived-dot: var(--color-neutral-400);
+
+  --status-in-progress-bg:  var(--color-info-50);
+  --status-in-progress-fg:  var(--color-info-700);
+  --status-in-progress-dot: var(--color-info-500);
+
+  --status-on-hold-bg:  var(--color-warning-50);
+  --status-on-hold-fg:  var(--color-warning-700);
+  --status-on-hold-dot: var(--color-warning-500);
+
+  /* ── Semantic surfaces ── */
+  --surface-page:    #f7f7f8;
+  --surface-card:    var(--color-neutral-0);
+  --surface-sidebar: var(--color-neutral-0);
+  --surface-input:   var(--color-neutral-0);
+  --surface-overlay: rgba(10, 10, 10, 0.45);
+
+  /* ── Borders ── */
+  --border-default: var(--color-neutral-200);
+  --border-input:   var(--color-neutral-300);
+  --border-focus:   var(--color-black);
+
+  /* ── Text ── */
+  --text-primary:   var(--color-black);
+  --text-secondary: var(--color-neutral-600);
+  --text-tertiary:  var(--color-neutral-400);
+  --text-inverse:   var(--color-neutral-0);
+  --text-brand:     var(--color-neutral-900);
+  --text-danger:    var(--color-danger-600);
+
+  /* ── Interactive ── */
+  --interactive-primary:          var(--color-neutral-900);
+  --interactive-primary-hover:    var(--color-black);
+  --interactive-primary-bg:       var(--color-neutral-100);
+  --interactive-primary-bg-hover: var(--color-neutral-200);
+  --interactive-secondary-hover:  var(--color-neutral-100);
+  --text-on-primary:              #ffffff;
+
+  /* ── Sidebar ── */
+  --sidebar-width:            16rem;
+  --sidebar-bg:               var(--surface-sidebar);
+  --sidebar-border:           var(--border-default);
+  --sidebar-item-active-bg:   var(--color-neutral-100);
+  --sidebar-item-active-text: var(--color-black);
+  --sidebar-item-hover-bg:    var(--surface-page);
+  --sidebar-item-text:        var(--color-neutral-600);
+  --sidebar-section-text:     var(--color-neutral-400);
+
+  /* ── Header ── */
+  --header-height: 3.5rem;
+  --header-bg:     var(--color-neutral-0);
+  --header-border: var(--border-default);
+
+  /* ── Typography ── */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+
+  --font-normal:   400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+
+  --leading-tight:   1.25;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+
+  /* ── Spacing scale (4-pt grid) ── */
+  --space-0:   0;
+  --space-0-5: 0.125rem;
+  --space-1:   0.25rem;
+  --space-1-5: 0.375rem;
+  --space-2:   0.5rem;
+  --space-2-5: 0.625rem;
+  --space-3:   0.75rem;
+  --space-3-5: 0.875rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-14:  3.5rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+
+  /* ── Layout spacing (responsive) ── */
+  --page-px:     var(--space-4);
+  --page-py:     var(--space-4);
+  --layout-gap:  var(--space-4);
+  --section-gap: var(--space-6);
+  --card-pad:    var(--space-4);
+  --field-gap:   var(--space-4);
+
+  /* ── Border radius ── */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+
+  /* ── Transitions ── */
+  --transition-fast:   100ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow:   300ms ease;
+
+  /* ── Z-index ── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* Layout spacing scales at larger viewports */
+@media (min-width: 640px) {
+  :root {
+    --page-px:  var(--space-6);
+    --page-py:  var(--space-6);
+    --card-pad: var(--space-5);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --page-px:    var(--space-8);
+    --layout-gap: var(--space-6);
+  }
+}
+
+/* ============================================================
+   Dark theme
+   ============================================================ */
+[data-theme="dark"] {
+  --color-neutral-0:   #141416;
+  --color-neutral-50:  #1a1a1d;
+  --color-neutral-100: #202024;
+  --color-neutral-200: #2a2a2f;
+  --color-neutral-300: #3a3a40;
+  --color-neutral-400: #737373;
+  --color-neutral-500: #a3a3a3;
+  --color-neutral-600: #c4c4c6;
+  --color-neutral-700: #d4d4d8;
+  --color-neutral-800: #e5e5e5;
+  --color-neutral-900: #f5f5f5;
+  --color-black:       #0a0a0a;
+  --color-white:       #ffffff;
+
+  --color-primary-50:  #1a1a1d;
+  --color-primary-100: #26262a;
+  --color-primary-200: #303036;
+  --color-primary-300: #3a3a40;
+  --color-primary-400: #737373;
+  --color-primary-500: #d4d4d8;
+  --color-primary-600: #e5e5e5;
+  --color-primary-700: #d4d4d8;
+  --color-primary-800: #f5f5f5;
+  --color-primary-900: #ffffff;
+
+  --color-danger-50:  #2a1416;
+  --color-danger-100: #3a1a1d;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #f87171;
+  --color-danger-700: #fca5a5;
+
+  --color-success-50:  #0f1f14;
+  --color-success-100: #16301c;
+  --color-success-500: #4ade80;
+  --color-success-600: #86efac;
+  --color-success-700: #bbf7d0;
+  --color-warning-50:  #1f1808;
+  --color-warning-100: #2a200c;
+  --color-warning-500: #fbbf24;
+  --color-warning-600: #fcd34d;
+  --color-warning-700: #fde68a;
+  --color-info-50:     #0c1524;
+  --color-info-100:    #132036;
+  --color-info-500:    #60a5fa;
+  --color-info-600:    #93c5fd;
+  --color-info-700:    #bfdbfe;
+
+  --surface-page:    #0a0a0a;
+  --surface-card:    #131315;
+  --surface-sidebar: #0c0c0e;
+  --surface-input:   #1a1a1d;
+  --surface-overlay: rgba(0, 0, 0, 0.6);
+
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-input:   rgba(255, 255, 255, 0.12);
+  --border-focus:   #e5e5e5;
+
+  --text-primary:   #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-tertiary:  #737373;
+  --text-inverse:   #0a0a0a;
+  --text-brand:     #e5e5e5;
+  --text-danger:    #f87171;
+
+  --interactive-primary:          #e5e5e5;
+  --interactive-primary-hover:    #ffffff;
+  --interactive-primary-bg:       rgba(255, 255, 255, 0.08);
+  --interactive-primary-bg-hover: rgba(255, 255, 255, 0.12);
+  --interactive-secondary-hover:  rgba(255, 255, 255, 0.06);
+  --text-on-primary:              #0a0a0a;
+
+  --sidebar-bg:               #0c0c0e;
+  --sidebar-border:           rgba(255, 255, 255, 0.08);
+  --sidebar-item-active-bg:   rgba(255, 255, 255, 0.08);
+  --sidebar-item-active-text: #f5f5f5;
+  --sidebar-item-hover-bg:    rgba(255, 255, 255, 0.05);
+  --sidebar-item-text:        #a3a3a3;
+  --sidebar-section-text:     #737373;
+
+  --header-bg:     #0c0c0e;
+  --header-border: rgba(255, 255, 255, 0.08);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.7);
+}
